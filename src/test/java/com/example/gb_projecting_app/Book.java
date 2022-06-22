@@ -1,5 +1,8 @@
 package com.example.gb_projecting_app;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Book extends Library_document {
     private String Publishing_house;
 
@@ -9,6 +12,10 @@ public class Book extends Library_document {
         super.setID(ID);
         super.setImage(image);
         this.Publishing_house = publishing_house;
+    }
+
+    public Book() {
+
     }
 
     public String getPublishing_house() {
