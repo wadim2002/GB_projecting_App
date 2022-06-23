@@ -6,5 +6,5 @@ public abstract class Processing_rule {
     private String Rule_Label;
     private Library_document library_documentdoc;
 
-    public abstract Library_document Process();
+    public abstract Library_document Process(Library_document library_document);
 }

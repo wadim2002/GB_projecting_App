@@ -12,7 +12,8 @@ public class test2 {
 
         Book book = context.getBean("bookBean", Book.class);
         Process_rule_extract_size myrule = context.getBean("ruleExtractSizeBean", Process_rule_extract_size.class);
-        book = (Book)myrule.Process();
+        book.setLabel("книга");
+        book = (Book)myrule.Process(book);
 
         context.close();
         

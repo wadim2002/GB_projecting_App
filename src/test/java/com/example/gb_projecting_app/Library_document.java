@@ -1,10 +1,27 @@
 package com.example.gb_projecting_app;
 
+
+import org.hibernate.annotations.Table;
+import org.springframework.beans.factory.annotation.Value;
+
+import javax.persistence.*;
+
+@MappedSuperclass
+
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+
 public abstract class Library_document {
-    protected String Label; // Наименование
-    protected String Author; // Автор
+    @Column(name = "label")
+    protected String Label=""; // Наименование
+    @Column(name = "autor")
+    protected String Author=""; // Автор
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    @Value("0")
     protected int ID; // Идентификатор
-    protected String Image; // Электронный образ
+    @Column(name = "image")
+    protected String Image=""; // Электронный образ
 
     abstract String Show_document();
 

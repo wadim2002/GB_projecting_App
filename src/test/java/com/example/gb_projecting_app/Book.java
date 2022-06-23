@@ -1,21 +1,29 @@
 package com.example.gb_projecting_app;
 
+import org.junit.platform.commons.annotation.Testable;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="books")
 @Component
 public class Book extends Library_document {
+    @Column(name = "Publishing_house")
     private String Publishing_house;
 
-    public Book(String label, String author, int ID, String publishing_house, String image) {
+    public Book(String label, String author, String publishing_house, String image) {
         super.setLabel(label);
         super.setAuthor(author);
         super.setID(ID);
         super.setImage(image);
-        this.Publishing_house = publishing_house;
+        Publishing_house = publishing_house;
     }
 
     public Book() {
-
     }
 
     public String getPublishing_house() {
@@ -25,5 +33,9 @@ public class Book extends Library_document {
     @Override
     public String Show_document() {
         return "";
+    }
+
+    public void setPublishing_house(String publishing_house) {
+        Publishing_house = publishing_house;
     }
 }

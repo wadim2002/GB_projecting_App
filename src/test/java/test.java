@@ -4,10 +4,10 @@ import com.example.gb_projecting_app.process_rules.Processing_rule;
 
 public class test {
     public static void main(String[] args) {
-        Book book = new Book("Азбука","Иванов", 1,"Роспечать", "c:file.pdf");
+        Book book = new Book("Азбука","Иванов", "Роспечать", "c:file.pdf");
         System.out.println(book.getImage());
 
         Process_rule_extract_size rule = new Process_rule_extract_size();
-        book = (Book) rule.Process();
+        book = (Book) rule.Process(book);
     }
 }
